@@ -1,36 +1,35 @@
-## Welcome to GitHub Pages
+## Nick Hagerty - CSE 620B - Remote Sensing and Computer Vision - Installing Anaconda
 
-You can use the [editor on GitHub](https://github.com/nickhags/cse620b_anaconda_install/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This page summarizes the process of installing Anaconda Python (python3), then creating an environment, an ipython kernel, and running jupyter-lab/
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Preliminaries
 
-### Markdown
+This blog post details commands and concepts from a Linux-based Operating System in a Bash shell. Some changes will be necessary to use these commands on Windows systems.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+### Commands
+```
+# Install Anaconda - shell script downloaded from Anaconda website
+bash 'Anaconda-install-script.sh'
+# Start a fresh terminal after installing Anaconda
+# Create CSE620B environment
+conda create -n cse620b python=3.7
+# Activate and switch to CSE620B environment
+conda activate cse620b
+# Install necessary packages
+conda install scipy ipython matplotlib  jupyterlab scikit-learn scikit-image opencv rasterio shapely fiona ipykernel pandas nodejs
+# Install ipykernel with CSE620B environment recognized
+python -m ipykernel install --user --name cse620b
+# Start jupter lab session (should open a browser window)
+jupyter-lab
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Testing Jupyter-lab Installation
 
-### Jekyll Themes
+Below is a screenshot of a jupyter-lab window testing the installation from this post.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/nickhags/cse620b_anaconda_install/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![JupyterLab Screenshot](screenshot.jpg)
+
+Successful 'import' commands produce no output (as shown).
 
 ### Support or Contact
 
